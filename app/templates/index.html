@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lero Lero</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">
+            <span class="azul">Lero</span> <span class="vermelho">Lero</span>
+        </h1>
+
+        <div class="resultado">
+            {% if palavra %}
+                <p class="palavra">{{ palavra }}</p>
+            {% else %}
+                <p class="palavra">Clique no botão para sortear!</p>
+            {% endif %}
+        </div>
+
+        <form action="/sortear">
+            <button type="submit" class="botao">🎲 Sortear Palavra</button>
+        </form>
+    </div>
+</body>
+</html>
